@@ -1,0 +1,22 @@
+2025-08-15 04:11:15,443 - Mock Version: 6.3
+2025-08-15 04:11:15,458 - Start(bootstrap): chroot init
+2025-08-15 04:11:15,529 - Start(bootstrap): cleaning package manager metadata
+2025-08-15 04:11:15,530 - Finish(bootstrap): cleaning package manager metadata
+2025-08-15 04:11:16,035 - Finish(bootstrap): chroot init
+2025-08-15 04:11:16,043 - Start: chroot init
+2025-08-15 04:11:16,072 - Start: unpacking root cache
+2025-08-15 04:11:17,015 - Finish: unpacking root cache
+2025-08-15 04:11:17,021 - Start: cleaning package manager metadata
+2025-08-15 04:11:17,024 - Finish: cleaning package manager metadata
+2025-08-15 04:11:17,570 - Start: dnf4 update
+2025-08-15 04:11:23,164 - Finish: dnf4 update
+2025-08-15 04:11:23,542 - Finish: chroot init
+2025-08-15 04:11:23,545 - Start: build phase for nginx-1.28.0-1.alma10.ngx.src.rpm
+2025-08-15 04:11:23,547 - Start: build setup for nginx-1.28.0-1.alma10.ngx.src.rpm
+2025-08-15 04:11:42,024 - Finish: build setup for nginx-1.28.0-1.alma10.ngx.src.rpm
+2025-08-15 04:11:42,025 - Start: rpmbuild nginx-1.28.0-1.alma10.ngx.src.rpm
+2025-08-15 04:11:42,030 - Start: Outputting list of installed packages
+2025-08-15 04:11:42,362 - Finish: Outputting list of installed packages
+2025-08-15 06:42:01,677 - Finish: rpmbuild nginx-1.28.0-1.alma10.ngx.src.rpm
+2025-08-15 06:42:01,714 - Finish: build phase for nginx-1.28.0-1.alma10.ngx.src.rpm
+2025-08-15 06:42:01,724 - Finish: run
