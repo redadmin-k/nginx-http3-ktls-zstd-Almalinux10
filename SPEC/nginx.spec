@@ -108,7 +108,7 @@ Vendor: NGINX Packaging <nginx-packaging@f5.com>
 URL: https://nginx.org/
 Group: %{_group}
 
-Source0: nginx-%{version}.tar.gz
+Source0: https://nginx.org/download/nginx-1.28.0.tar.gz
 Source1: logrotate
 Source2: nginx.conf
 Source3: nginx.default.conf
@@ -118,8 +118,8 @@ Source6: nginx.suse.logrotate
 Source7: nginx-debug.service
 Source8: nginx.copyright
 Source9: nginx.check-reload.sh
-Source10: 0.1.1.tar.gz
-Source11: openssl-3.3.0-quic1.tar.gz 
+Source10: https://github.com/tokers/zstd-nginx-module/archive/refs/tags/0.1.1.tar.gz
+Source11: https://github.com/quictls/openssl/archive/refs/tags/openssl-3.3.0-quic1.tar.gz 
 
 License: 2-clause BSD-like license
 
@@ -242,8 +242,6 @@ cat /dev/null > debugsources.list
 cat /dev/null > debugsourcefiles.list
 %endif
 
-%clean
-%{__rm} -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)

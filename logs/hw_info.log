@@ -45,11 +45,11 @@ Vulnerability Tsx async abort:        Not affected
 
 Memory:
                total        used        free      shared  buff/cache   available
-Mem:           3.6Gi       742Mi       2.2Gi       6.3Mi       942Mi       2.8Gi
-Swap:          3.9Gi       7.8Mi       3.9Gi
+Mem:           3.6Gi       782Mi       2.4Gi        15Mi       766Mi       2.8Gi
+Swap:          3.9Gi       1.3Mi       3.9Gi
 
 
 Storage (chroot, cache_topdir):
 Filesystem     Type  Size  Used Avail Use% Mounted on
-/dev/vda4      xfs    49G  4.2G   45G   9% /
-/dev/vda4      xfs    49G  4.2G   45G   9% /
+/dev/vda4      xfs    49G  7.2G   42G  15% /
+/dev/vda4      xfs    49G  7.2G   42G  15% /
