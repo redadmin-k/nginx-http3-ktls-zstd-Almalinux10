@@ -1,22 +1,22 @@
-2025-08-17 10:22:24,006 - Mock Version: 6.3
-2025-08-17 10:22:24,021 - Start(bootstrap): chroot init
-2025-08-17 10:22:24,094 - Start(bootstrap): cleaning package manager metadata
-2025-08-17 10:22:24,095 - Finish(bootstrap): cleaning package manager metadata
-2025-08-17 10:22:24,660 - Finish(bootstrap): chroot init
-2025-08-17 10:22:24,667 - Start: chroot init
-2025-08-17 10:22:24,697 - Start: unpacking root cache
-2025-08-17 10:22:25,632 - Finish: unpacking root cache
-2025-08-17 10:22:25,639 - Start: cleaning package manager metadata
-2025-08-17 10:22:25,642 - Finish: cleaning package manager metadata
-2025-08-17 10:22:26,220 - Start: dnf4 update
-2025-08-17 10:22:31,834 - Finish: dnf4 update
-2025-08-17 10:22:32,197 - Finish: chroot init
-2025-08-17 10:22:32,200 - Start: build phase for nginx-1.28.0-1.alma10.ngx.src.rpm
-2025-08-17 10:22:32,203 - Start: build setup for nginx-1.28.0-1.alma10.ngx.src.rpm
-2025-08-17 10:22:50,335 - Finish: build setup for nginx-1.28.0-1.alma10.ngx.src.rpm
-2025-08-17 10:22:50,336 - Start: rpmbuild nginx-1.28.0-1.alma10.ngx.src.rpm
-2025-08-17 10:22:50,341 - Start: Outputting list of installed packages
-2025-08-17 10:22:50,682 - Finish: Outputting list of installed packages
-2025-08-17 12:51:46,751 - Finish: rpmbuild nginx-1.28.0-1.alma10.ngx.src.rpm
-2025-08-17 12:51:46,773 - Finish: build phase for nginx-1.28.0-1.alma10.ngx.src.rpm
-2025-08-17 12:51:46,782 - Finish: run
+2025-12-30 22:55:55,670 - Mock Version: 6.6
+2025-12-30 22:55:55,689 - Start(bootstrap): chroot init
+2025-12-30 22:55:55,777 - Start(bootstrap): cleaning package manager metadata
+2025-12-30 22:55:55,778 - Finish(bootstrap): cleaning package manager metadata
+2025-12-30 22:55:56,414 - Finish(bootstrap): chroot init
+2025-12-30 22:55:56,422 - Start: chroot init
+2025-12-30 22:55:56,455 - Start: unpacking root cache
+2025-12-30 22:55:57,733 - Finish: unpacking root cache
+2025-12-30 22:55:57,741 - Start: cleaning package manager metadata
+2025-12-30 22:55:57,744 - Finish: cleaning package manager metadata
+2025-12-30 22:55:58,462 - Start: dnf4 update
+2025-12-30 22:56:06,262 - Finish: dnf4 update
+2025-12-30 22:56:07,628 - Finish: chroot init
+2025-12-30 22:56:07,632 - Start: build phase for nginx-1.28.1-1.alma10.ngx.src.rpm
+2025-12-30 22:56:07,634 - Start: build setup for nginx-1.28.1-1.alma10.ngx.src.rpm
+2025-12-30 22:56:52,645 - Finish: build setup for nginx-1.28.1-1.alma10.ngx.src.rpm
+2025-12-30 22:56:52,646 - Start: rpmbuild nginx-1.28.1-1.alma10.ngx.src.rpm
+2025-12-30 22:56:52,652 - Start: Outputting list of installed packages
+2025-12-30 22:56:53,065 - Finish: Outputting list of installed packages
+2025-12-31 04:46:05,402 - Finish: rpmbuild nginx-1.28.1-1.alma10.ngx.src.rpm
+2025-12-31 04:46:05,508 - Finish: build phase for nginx-1.28.1-1.alma10.ngx.src.rpm
+2025-12-31 04:46:05,520 - Finish: run

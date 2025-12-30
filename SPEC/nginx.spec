@@ -90,7 +90,7 @@ Requires(pre): shadow-utils
 
 # end of distribution specific definitions
 
-%define base_version 1.28.0
+%define base_version 1.28.1
 %define base_release 1%{?dist}.ngx
 
 %define bdir %{_builddir}/%{name}-%{base_version}
@@ -108,7 +108,7 @@ Vendor: NGINX Packaging <nginx-packaging@f5.com>
 URL: https://nginx.org/
 Group: %{_group}
 
-Source0: https://nginx.org/download/nginx-1.28.0.tar.gz
+Source0: https://nginx.org/download/nginx-1.28.1.tar.gz
 Source1: logrotate
 Source2: nginx.conf
 Source3: nginx.default.conf
@@ -119,7 +119,7 @@ Source7: nginx-debug.service
 Source8: nginx.copyright
 Source9: nginx.check-reload.sh
 Source10: https://github.com/tokers/zstd-nginx-module/archive/refs/tags/0.1.1.tar.gz
-Source11: https://github.com/quictls/openssl/archive/refs/tags/openssl-3.3.0-quic1.tar.gz 
+Source11: https://github.com/openssl/openssl/releases/download/openssl-3.5.4/openssl-3.5.4.tar.gz
 
 License: 2-clause BSD-like license
 
@@ -155,7 +155,7 @@ a mail proxy server.
     --with-cc-opt="%{WITH_CC_OPT}" \
     --with-ld-opt="%{WITH_LD_OPT}" \
     --with-debug \
-    --with-openssl=openssl-openssl-3.3.0-quic1 \
+    --with-openssl=openssl-3.5.4 \
     --with-openssl-opt=enable-ktls \
 
 make %{?_smp_mflags}
@@ -167,7 +167,7 @@ make %{?_smp_mflags}
 ./configure %{BASE_CONFIGURE_ARGS} \
     --with-cc-opt="%{WITH_CC_OPT}" \
     --with-ld-opt="%{WITH_LD_OPT}" \
-    --with-openssl=openssl-openssl-3.3.0-quic1 \
+    --with-openssl=openssl-3.5.4 \
     --with-openssl-opt=enable-ktls \
 
 make %{?_smp_mflags}
