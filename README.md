@@ -19,10 +19,10 @@ This repository provides an Nginx build for AlmaLinux 10 with:
 
 ## Build Details (OpenSSL / HTTP/3)
 
-This build uses **OpenSSL** (not quictls) for TLS/QUIC.
+This build uses **OpenSSL 3.5.4** (standard OpenSSL, not quictls) for TLS/QUIC.
 
-- OpenSSL as reported by nginx -V ("built with"): <OPENSSL_VERSION_STRING>
-- OpenSSL at runtime ("running with", if shown): <OPENSSL_RUNTIME_STRING_OR_SAME>
+- OpenSSL as reported by nginx -V ("built with"): OpenSSL 3.5.4
+- OpenSSL at runtime ("running with", if shown): OpenSSL 3.5.4
 
 ### How to capture the exact OpenSSL string
 ```bash
@@ -35,7 +35,7 @@ nginx -V 2>&1 | grep -E 'built with OpenSSL|running with OpenSSL'
 
 ### 1) HTTP/3 (QUIC)
 
-Built with OpenSSL to enable QUIC and HTTP/3.
+Built with OpenSSL 3.5.4 to enable QUIC and HTTP/3.
 
 Proof: HTTP/3 request in nginx access log:
 ```text
@@ -50,7 +50,7 @@ curl -I --http3 https://alma10.redadmin.org/
 Expected output example:
 ```text
 HTTP/3 200
-server: nginx/1.28.0
+server: nginx/1.28.1
 alt-svc: h3=":443"; ma=86400
 ```
 
@@ -91,8 +91,8 @@ This indicates TLS records are being offloaded to the kernel via KTLS (when the 
 
 - OS: AlmaLinux 10 (x86_64)
 - Build Tool: mock (`alma+epel-10-x86_64` config)
-- Nginx Version: 1.28.0
-- OpenSSL (nginx -V "built with"): <OPENSSL_VERSION_STRING>
+- Nginx Version: 1.28.1
+- OpenSSL Version: 3.5.4
 - Modules Added:
   - https://github.com/tokers/zstd-nginx-module
 
