@@ -90,8 +90,8 @@ Requires(pre): shadow-utils
 
 # end of distribution specific definitions
 
-%define base_version 1.28.1
-%define base_release 2%{?dist}.ngx
+%define base_version 1.28.3
+%define base_release 1%{?dist}.ngx
 
 %define bdir %{_builddir}/%{name}-%{base_version}
 
@@ -108,7 +108,7 @@ Vendor: NGINX Packaging <nginx-packaging@f5.com>
 URL: https://nginx.org/
 Group: %{_group}
 
-Source0: https://nginx.org/download/nginx-1.28.1.tar.gz
+Source0: https://nginx.org/download/%{name}-%{version}.tar.gz
 Source1: logrotate
 Source2: nginx.conf
 Source3: nginx.default.conf
@@ -119,7 +119,8 @@ Source7: nginx-debug.service
 Source8: nginx.copyright
 Source9: nginx.check-reload.sh
 Source10: https://github.com/tokers/zstd-nginx-module/archive/refs/tags/0.1.1.tar.gz
-Source11: https://github.com/openssl/openssl/releases/download/openssl-3.5.5/openssl-3.5.5.tar.gz
+Source11: https://github.com/openssl/openssl/releases/download/openssl-3.5.6/openssl-3.5.6.tar.gz
+
 
 License: 2-clause BSD-like license
 
@@ -128,6 +129,7 @@ BuildRequires: zlib-devel
 BuildRequires: pcre2-devel
 BuildRequires: perl
 BuildRequires: libzstd-devel
+
 
 Provides: webserver
 Provides: nginx-r%{base_version}
@@ -140,7 +142,7 @@ Recommends: logrotate
 nginx [engine x] is an HTTP and reverse proxy server, as well as
 a mail proxy server.
 
-%if 0%{?suse_version} >= 1315
+%if ( 0%{?suse_version} && 0%{?suse_version} < 1600 )
 %debug_package
 %endif
 
@@ -149,29 +151,25 @@ a mail proxy server.
 %setup -q -T -D -a 10
 %setup -q -T -D -a 11
 
-%build
 
 ./configure %{BASE_CONFIGURE_ARGS} \
     --with-cc-opt="%{WITH_CC_OPT}" \
     --with-ld-opt="%{WITH_LD_OPT}" \
     --with-debug \
-    --with-openssl=openssl-3.5.5 \
-    --with-openssl-opt=enable-ktls \
+    --with-openssl=openssl-3.5.6 \
+    --with-openssl-opt=enable-ktls
+    
 
 make %{?_smp_mflags}
-
 %{__mv} %{bdir}/objs/nginx \
     %{bdir}/objs/nginx-debug
-
-
 ./configure %{BASE_CONFIGURE_ARGS} \
     --with-cc-opt="%{WITH_CC_OPT}" \
     --with-ld-opt="%{WITH_LD_OPT}" \
-    --with-openssl=openssl-3.5.5 \
-    --with-openssl-opt=enable-ktls \
+    --with-openssl=openssl-3.5.6 \
+    --with-openssl-opt=enable-ktls 
 
 make %{?_smp_mflags}
-
 
 %install
 %{__rm} -rf $RPM_BUILD_ROOT
@@ -242,6 +240,8 @@ cat /dev/null > debugsources.list
 cat /dev/null > debugsourcefiles.list
 %endif
 
+%clean
+%{__rm} -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
@@ -338,13 +338,29 @@ fi
 /usr/bin/systemctl daemon-reload >/dev/null 2>&1 ||:
 if [ $1 -ge 1 ]; then
     /sbin/service nginx status  >/dev/null 2>&1 || exit 0
+%if 0%{?suse_version} >= 1600
+    %{_libexecdir}/initscripts/legacy-actions/nginx/upgrade >/dev/null 2>&1 || echo \
+%else
     /sbin/service nginx upgrade >/dev/null 2>&1 || echo \
+%endif
         "Binary upgrade failed, please check nginx's error.log"
 fi
 
 %changelog
-* Wed Apr 23 2025 Akiyoshi Kurita <akito5623@gmaile.com> - 1.28.0-1%{?dist}.ngx
+* Thu Apr 09 2026 Akiyoshi Kurita <akito5623@gmail.com> - 1.28.3-1.alma10.ngx
 - Rebuilt for AlmaLinux 10 with alma10 tag and debug binary fix
+
+* Tue Mar 24 2026 Nginx Packaging <nginx-packaging@f5.com> - 1.28.3-1%{?dist}.ngx
+- 1.28.3-1
+
+* Wed Feb  4 2026 Nginx Packaging <nginx-packaging@f5.com> - 1.28.2-1%{?dist}.ngx
+- 1.28.2-1
+
+* Tue Dec 23 2025 Nginx Packaging <nginx-packaging@f5.com> - 1.28.1-1%{?dist}.ngx
+- 1.28.1-1
+
+* Fri Nov 21 2025 Nginx Packaging <nginx-packaging@f5.com> - 1.28.0-2%{?dist}.ngx
+- SLES 16: fixed automatic binary upgrade
 
 * Wed Apr 23 2025 Nginx Packaging <nginx-packaging@f5.com> - 1.28.0-1%{?dist}.ngx
 - 1.28.0-1
