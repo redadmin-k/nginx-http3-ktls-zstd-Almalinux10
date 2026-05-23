@@ -50,7 +50,7 @@ curl -I --http3 https://alma10.redadmin.org/
 Expected output example:
 ```text
 HTTP/3 200
-server: nginx/1.28.1
+server: nginx/1.30.2
 alt-svc: h3=":443"; ma=86400
 ```
 
@@ -91,7 +91,7 @@ This indicates TLS records are being offloaded to the kernel via KTLS (when the 
 
 - OS: AlmaLinux 10 (x86_64)
 - Build Tool: mock (`alma+epel-10-x86_64` config)
-- Nginx Version: 1.30.1
+- Nginx Version: 1.30.2
 - OpenSSL Version: 3.5.6
 - Modules Added:
   - https://github.com/tokers/zstd-nginx-module
@@ -103,3 +103,12 @@ This indicates TLS records are being offloaded to the kernel via KTLS (when the 
 - nginx – BSD 2-Clause License
 - OpenSSL – Apache License 2.0
 - zstd-nginx-module – BSD 2-Clause License
+
+---
+
+## Notice
+
+This is an unofficial Nginx build for AlmaLinux 10.
+
+This repository is not affiliated with, endorsed by, or supported by the AlmaLinux OS Foundation or the official AlmaLinux project.  
+Use these RPM packages at your own risk.
