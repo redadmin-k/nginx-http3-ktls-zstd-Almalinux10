@@ -33,6 +33,7 @@ Vulnerability L1tf:                      Not affected
 Vulnerability Mds:                       Not affected
 Vulnerability Meltdown:                  Not affected
 Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Not affected
 Vulnerability Reg file data sampling:    Vulnerable: No microcode
 Vulnerability Retbleed:                  Not affected
 Vulnerability Spec rstack overflow:      Not affected
@@ -47,11 +48,11 @@ Vulnerability Vmscape:                   Not affected
 
 Memory:
                total        used        free      shared  buff/cache   available
-Mem:           3.6Gi       647Mi       2.1Gi        12Mi       1.1Gi       2.9Gi
+Mem:           3.6Gi       586Mi       2.2Gi        12Mi       1.0Gi       3.0Gi
 Swap:          3.9Gi          0B       3.9Gi
 
 
 Storage (chroot, cache_topdir):
 Filesystem     Type  Size  Used Avail Use% Mounted on
-/dev/vda4      xfs    49G   12G   37G  24% /
-/dev/vda4      xfs    49G   12G   37G  24% /
+/dev/vda4      xfs    49G   13G   36G  26% /
+/dev/vda4      xfs    49G   13G   36G  26% /
