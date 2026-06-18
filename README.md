@@ -91,7 +91,7 @@ This indicates TLS records are being offloaded to the kernel via KTLS (when the 
 
 - OS: AlmaLinux 10 (x86_64)
 - Build Tool: mock (`alma+epel-10-x86_64` config)
-- Nginx Version: 1.30.2
+- Nginx Version: 1.30.3
 - OpenSSL Version: 3.5.7
 - Modules Added:
   - https://github.com/tokers/zstd-nginx-module
